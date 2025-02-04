@@ -1,0 +1,29 @@
+﻿@model List<ResultFeatureDto>
+<div class="we-help-section">
+    <div class="container">
+        @foreach(var item in Model)
+        {
+            <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="imgs-grid">
+                        <div class="grid grid-1"><img src="@item.Image1" alt="Untree.co"></div>
+                        <div class="grid grid-2"><img src="@item.Image2" alt="Untree.co"></div>
+                        <div class="grid grid-3"><img src="@item.Image3" alt="Untree.co"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 ps-lg-5">
+                    <h2 class="section-title mb-4">@item.Title</h2>
+                    <p>@item.Description</p>
+
+                    <ul class="list-unstyled custom-list my-4">
+                        <li>@item.Feature1</li>
+                        <li>@item.Feature2</li>
+                        <li>@item.Feature3</li>
+                        <li>@item.Feature4</li>
+                    </ul>
+                    <p><a herf="/Product" class="btn">İncele</a></p>
+                </div>
+            </div>
+        } 
+    </div>
+</div>

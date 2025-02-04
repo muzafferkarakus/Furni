@@ -1,0 +1,23 @@
+﻿@model ResultAboutDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="why-choose-section">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <h2 class="section-title">@Model.Title</h2>
+                <p>@Model.Description</p>
+                @await Component.InvokeAsync("_AboutServicePartial")
+            </div>
+            <div class="col-lg-5">
+                <div class="img-wrap">
+                    <img src="@Model.AboutImage" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("_AboutOurTeam")
+@await Component.InvokeAsync("_DefaultTestimonialPartial")

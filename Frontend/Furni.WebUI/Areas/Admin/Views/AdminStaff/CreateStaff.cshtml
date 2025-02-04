@@ -1,0 +1,47 @@
+﻿@model CreateStaffDto
+@{
+    ViewData["Title"] = "CreateStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Personel Ekleme</div>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Personel Adı Soyadı</label>
+                            <input type="text" class="form-control" asp-for="Name" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Unvan </label>
+                            <input type="text" class="form-control" asp-for="Title" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Görsel</label>
+                            <input type="file" class="form-control" asp-for="file" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Açıklama</label>
+                            <textarea rows="5" class="form-control" asp-for="Description"></textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-outline-dark">Kaydet</button>
+                    <a href="/AdminStaff/Index" class="btn btn-outline-danger">Geri Dön</a>
+                </div>
+            </form>
+            <br />
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model List<ResultSubscribeDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex align-items-center">
+                <h4 class="card-title">Bülten</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="basic-datatables"
+                       class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ad Soyad</th>
+                            <th>E-Posta</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td><a href="/Admin/AdminSubscribe/UpdateSubscribe/@item.SubscribeId" class="btn btn-outline-warning">Güncelle</a></td>
+                                <td><a href="/Admin/AdminSubscribe/DeleteSubscribe/@item.SubscribeId" class="btn btn-outline-danger">Sil</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

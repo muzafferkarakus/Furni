@@ -1,0 +1,25 @@
+﻿@model List<ResultStaffDto>
+<div class="untree_co-section">
+    <div class="container">
+
+        <div class="row mb-5">
+            <div class="col-lg-5 mx-auto text-center">
+                <h2 class="section-title">Ekibimiz</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+                    <img src="@item.ImageUrl" class="img-fluid mb-5">
+                    <h3 clas><a href="#"><span class="">@item.Name</a></h3>
+                    <span class="d-block position mb-4">@item.Title</span>
+                    <p>
+                        @item.Description
+                    </p>
+                    @* <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p> *@
+                </div>
+            }
+        </div>
+    </div>
+</div>

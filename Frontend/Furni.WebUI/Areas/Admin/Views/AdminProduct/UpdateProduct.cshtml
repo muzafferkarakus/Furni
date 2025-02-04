@@ -1,0 +1,41 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Ürün Güncelleme</div>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Ürün Adı</label>
+                            <input type="hidden" asp-for="ProductId" />
+                            <input type="text" class="form-control" asp-for="ProductName" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fiyatı </label>
+                            <input type="number" class="form-control" asp-for="ProductPrice" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Ürün Görseli</label>
+                            <input type="file" class="form-control" asp-for="file" />
+                        </div>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-outline-dark">Güncelle</button>
+                    <a href="/AdminProduct/Index" class="btn btn-outline-danger">Geri Dön</a>
+                </div>
+            </form>
+            <br />
+        </div>
+    </div>
+</div>
+

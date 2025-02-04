@@ -1,0 +1,26 @@
+﻿@model List<ResultProductDto>
+<div class="product-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                <h2 class="mb-4 section-title">Mükemmel malzeme ile hazırlanmış.</h2>
+                <p class="mb-4">Farklı tasarımlar ile evinize şık bir hava katacak mobilya ve aksesuarlar. </p>
+                <p><a href="/Product" class="btn">İncele</a></p>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                    <a class="product-item" href="/Product/">
+                        <img src="@item.ProductImage" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">@item.ProductName</h3>
+                        <strong class="product-price">@item.ProductPrice ₺</strong>
+
+                        <span class="icon-cross">
+                            <img src="~/untree.co-furni/images/cross.svg" class="img-fluid">
+                        </span>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_AdminLayoutHeadPartial")
+<body>
+    <div class="wrapper">
+        @await Component.InvokeAsync("_AdminLayoutSidebarPartial")
+        <div class="main-panel">
+            <div class="main-header">
+                <div class="main-header-logo">
+                    @await Component.InvokeAsync("_AdminLayoutHeaderPartial")
+                </div>
+                @await Component.InvokeAsync("_AdminLayoutNavbarPartial")
+            </div>
+            <div class="container">
+                <div class="page-inner">
+                    @await Component.InvokeAsync("_AdminLayoutPageHeaderPartial")
+                    <div class="page-category">@RenderBody()</div>
+                </div>
+            </div>
+            @* @await Component.InvokeAsync("_AdminLayoutFooterPartial") *@
+        </div>
+    </div>
+    @await Component.InvokeAsync("_AdminLayoutScriptPartial")
+</body>
+</html>
+

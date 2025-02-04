@@ -1,0 +1,20 @@
+﻿<div class="row">
+    <div class="col-lg-8">
+        <div class="subscription-form">
+            <h3 class="d-flex align-items-center"><span class="me-1"><img src="~/untree.co-furni/images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Bültenimize Abone olun</span></h3>
+            <form method="post" asp-action="_LayoutFooterSubscribePartial" asp-controller="Default" class="row g-3">
+                <div class="col-auto">
+                    <input type="text" class="form-control" name="Name" placeholder="Lütfen adınızı giriniz">
+                </div>
+                <div class="col-auto">
+                    <input type="email" class="form-control" name="Email" placeholder="Lütfen e-posta giriniz.">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary">
+                        <span class="fa fa-paper-plane"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

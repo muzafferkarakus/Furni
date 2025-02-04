@@ -1,0 +1,46 @@
+﻿@model List<ResultStaffDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex align-items-center">
+                <h4 class="card-title">Ekibimiz</h4>
+                <a href="/Admin/AdminStaff/CreateStaff" class="btn btn-secondary btn-round ms-auto"><span class="btn-label"><i class="fa fa-plus"></i></span>Personel Ekle</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="basic-datatables"
+                       class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Görsel</th>
+                            <th>Ad Soyad</th>
+                            <th>Unvan</th>
+                            <th>Açıklama</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><img src="@item.ImageUrl" class="form-control" style="width:150px" /></td>
+                                <td>@item.Name</td>
+                                <td>@item.Title</td>
+                                <td>@item.Description</td>
+                                <td><a href="/Admin/AdminStaff/UpdateStaff/@item.StaffId" class="btn btn-outline-warning">Güncelle</a></td>
+                                <td><a href="/Admin/AdminStaff/DeleteStaff/@item.StaffId" class="btn btn-outline-danger">Sil</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

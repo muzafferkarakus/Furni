@@ -1,0 +1,33 @@
+﻿@model List<ResultServiceDto>
+<div class="why-choose-section">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <h2 class="section-title">Neden Bizi Seçmelisiniz</h2>
+                <p>Yüksek malzeme kalitesi ile uzun ömürlü ve çevreye duyarlı üretim standartları ile doğayı koruyan ürünler</p>
+
+                <div class="row my-5">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="@item.ServiceImage" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>@item.ServiceName</h3>
+                                <p>@item.ServiceDescription</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="img-wrap">
+                    <img src="~/untree.co-furni/images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

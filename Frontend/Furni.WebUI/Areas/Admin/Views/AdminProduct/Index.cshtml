@@ -1,0 +1,45 @@
+﻿@model List<ResultProductDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex align-items-center">
+                <h4 class="card-title">Ürünler</h4>
+                <a href="/Admin/AdminProduct/CreateProduct" class="btn btn-secondary btn-round ms-auto"><span class="btn-label"><i class="fa fa-plus"></i></span>Ürün Ekle</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="basic-datatables"
+                       class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Görsel</th>
+                            <th>Ürün Adı</th>
+                            <th>Fiyatı</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><img src="@item.ProductImage" class="form-control" style="width:150px" /></td>
+                                <td>@item.ProductName</td>
+                                <td>@item.ProductPrice</td>
+                                <td><a href="/Admin/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-outline-warning">Güncelle</a></td>
+                                <td><a href="/Admin/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-outline-danger">Sil</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
